@@ -9,7 +9,7 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "format": "prettier --write README.md \".github/**\" profile/"
+    "format": "prettier --write \".github/**\" profile/ README.md \"**/*.json\""
   },
   "repository": {
     "type": "git",
