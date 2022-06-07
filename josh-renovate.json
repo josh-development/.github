@@ -13,7 +13,8 @@
       },
       {
         "matchPackagePatterns": ["@joshdb"],
-        "groupName": "JoshDB Dependencies"
+        "groupName": "JoshDB Dependencies",
+        "followTag": "next"
       },
       {
         "matchDepTypes": ["engines"],
