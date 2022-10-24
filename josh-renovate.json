@@ -3,6 +3,9 @@
   "extends": ["config:base", ":semanticCommits"],
   "labels": ["dependencies"],
   "schedule": ["before 12pm on Sunday"],
+  "github-actions": {
+    "enabled": false
+  },
   "npm": {
     "rangeStrategy": "bump",
     "packageRules": [
