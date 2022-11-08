@@ -14,14 +14,16 @@
         "matchDepTypes": ["dependencies"],
         "groupName": "all non-major dependencies",
         "groupSlug": "all-non-major",
-        "semanticCommitType": "fix"
+        "semanticCommitType": "fix",
+        "automerge": true
       },
       {
         "matchUpdateTypes": ["minor", "patch"],
         "matchDepTypes": ["devDependencies"],
         "groupName": "all non-major dev-dependencies",
         "groupSlug": "all-non-major-dev",
-        "semanticCommitType": "chore"
+        "semanticCommitType": "chore",
+        "automerge": true
       },
       {
         "matchUpdateTypes": ["minor", "patch"],
