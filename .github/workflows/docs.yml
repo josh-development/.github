@@ -2,8 +2,8 @@ on:
   workflow_call:
 
 jobs:
-  building:
-    name: Compile Source Code
+  docs:
+    name: Generate Documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -27,5 +27,5 @@ jobs:
             yarn-cache-folder-
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Build docs
+      - name: Run Docs
         run: yarn docs
