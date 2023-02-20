@@ -29,7 +29,5 @@ jobs:
         run: yarn --immutable
       - name: Add ESLint Problem Matcher
         run: echo "::add-matcher::.github/problemMatchers/eslint.json"
-      - name: Install Dependencies
-        run: yarn --immutable
       - name: Run ESLint
         run: yarn lint --fix=false
