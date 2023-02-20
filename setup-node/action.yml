@@ -30,9 +30,8 @@ runs:
       uses: actions/cache@v3
       with:
         path: |
-            ./node_modules/.cache/turbo
-            ./*/**/.turbo
-            ./.turbo
+            node_modules/.cache/turbo
+            .turbo
         key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
         restore-keys: |
           turbo-${{ github.job }}-${{ github.ref_name }}-
