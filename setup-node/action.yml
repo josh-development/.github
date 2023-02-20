@@ -1,5 +1,10 @@
 name: "Setup Node"
 description: "Setup Node with Yarn and caching"
+inputs:
+  turbo:
+    description: 'Whether to use Turbo Cache'
+    default: false
+    required: false
 
 runs:
   using: "composite"
@@ -20,6 +25,14 @@ runs:
         key: yarn-cache-folder-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
         restore-keys: |
           yarn-cache-folder-
+    - name: Turbo Cache
+      if: ${{ inputs.turbo }}
+      uses: actions/cache@v3
+      with:
+        path: node_modules/.cache/turbo
+        key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+        restore-keys: |
+          turbo-${{ github.job }}-${{ github.ref_name }}-
     - name: Install Dependencies
       run: yarn --immutable
       shell: bash
