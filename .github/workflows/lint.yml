@@ -2,10 +2,12 @@ on:
   workflow_call:
 
 jobs:
-  setup:
-    name: Setup Node
+  lint:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Project
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
       - name: Use Node.js v16
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
@@ -32,3 +34,9 @@ jobs:
             turbo-${{ github.job }}-${{ github.ref_name }}-
       - name: Install Dependencies
         run: yarn --immutable
+      - name: Add ESLint Problem Matcher
+        run: echo "::add-matcher::.github/problemMatchers/eslint.json"
+      - name: Install Dependencies
+        run: yarn --immutable
+      - name: Run ESLint
+        run: yarn lint --fix=false
