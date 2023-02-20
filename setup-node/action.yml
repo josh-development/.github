@@ -22,3 +22,4 @@ runs:
           yarn-cache-folder-
     - name: Install Dependencies
       run: yarn --immutable
+      shell: bash
