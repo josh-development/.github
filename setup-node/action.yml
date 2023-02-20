@@ -31,7 +31,7 @@ runs:
       with:
         path: |
             node_modules/.cache/turbo
-            ./**/.turbo
+            ./*/**/.turbo
         key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
         restore-keys: |
           turbo-${{ github.job }}-${{ github.ref_name }}-
