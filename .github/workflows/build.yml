@@ -2,8 +2,8 @@ on:
   workflow_call:
 
 jobs:
-  linting:
-    name: Linting
+  building:
+    name: Compile Source Code
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -25,11 +25,18 @@ jobs:
           key: yarn-cache-folder-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
           restore-keys: |
             yarn-cache-folder-
+      - name: Turbo Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache/turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Add ESLint Problem Matcher
-        run: echo "::add-matcher::.github/problemMatchers/eslint.json"
+      - name: Add TypeScript Problem Matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Run ESLint
-        run: yarn lint --fix=false
+      - name: Run Build
+        run: yarn build
