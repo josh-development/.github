@@ -4,7 +4,8 @@
   "labels": ["dependencies"],
   "schedule": ["before 12pm on Sunday"],
   "github-actions": {
-    "enabled": false
+    "enabled": true,
+    "automerge": true
   },
   "npm": {
     "rangeStrategy": "bump",
