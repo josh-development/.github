@@ -19,6 +19,7 @@ runs:
         node-version: ${{ inputs.version }}
         registry-url: https://registry.yarnpkg.com/
     - name: Ensure Yarn is installed
+      shell: bash
       run: npm i -g yarn
     - name: Locate Yarn Cache
       id: yarn-cache-dir-path
