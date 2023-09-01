@@ -7,7 +7,7 @@ inputs:
     required: false
   version:
     description: 'Node version'
-    default: '16'
+    default: '18'
     required: false
 
 runs:
