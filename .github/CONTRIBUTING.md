@@ -4,8 +4,8 @@
 
 1. Fork and clone this repository.
 2. Create a new branch in your fork based off the **main** branch.
-3. Make your changes, and push them.
-4. Submit a Pull Request [here](https://github.com/josh-development/.github/pulls)!
+3. Make your changes, commit, and push them.
+4. Submit a Pull Request!
 
 ## Contributing to the code
 
