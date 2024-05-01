@@ -13,5 +13,4 @@ package-lock.json
 gh
 
 # Ignore Yarn files
-.yarn/install-state.gz
-.yarn/build-state.yml
+.yarn/

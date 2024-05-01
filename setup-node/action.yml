@@ -1,5 +1,5 @@
-name: "Setup Node"
-description: "Setup Node with Yarn and caching"
+name: 'Setup Node'
+description: 'Setup Node with Yarn and Turbo Cache'
 inputs:
   turbo:
     description: 'Whether to use Turbo Cache'
@@ -7,24 +7,27 @@ inputs:
     required: false
   version:
     description: 'Node version'
-    default: '18'
+    default: '20'
     required: false
 
 runs:
-  using: "composite"
-  steps: 
+  using: 'composite'
+  steps:
     - name: Use Node.js v${{ inputs.version }}
       uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
       with:
         node-version: ${{ inputs.version }}
         registry-url: https://registry.yarnpkg.com/
-    - name: Ensure Yarn is installed
+
+    - name: Install Yarn
       shell: bash
       run: npm i -g yarn
+
     - name: Locate Yarn Cache
       id: yarn-cache-dir-path
       run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
       shell: bash
+
     - name: Yarn Cache
       uses: actions/cache@v4
       with:
@@ -32,16 +35,18 @@ runs:
         key: yarn-cache-folder-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
         restore-keys: |
           yarn-cache-folder-
+
     - name: Turbo Cache
       if: ${{ inputs.turbo }}
       uses: actions/cache@v4
       with:
         path: |
-            node_modules/.cache/turbo
-            .turbo
+          node_modules/.cache/turbo
+          .turbo
         key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
         restore-keys: |
           turbo-${{ github.job }}-${{ github.ref_name }}-
+
     - name: Install Dependencies
       run: yarn --immutable
       shell: bash
