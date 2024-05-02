@@ -10,6 +10,9 @@ inputs:
     default: '20'
     required: false
 
+env:
+  TURBO_CACHE_DIR: ./.turbo
+
 runs:
   using: 'composite'
   steps:
