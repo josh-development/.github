@@ -20,5 +20,5 @@
     "prettier": "^3.5.3"
   },
   "prettier": "@joshdb/prettier-config",
-  "packageManager": "yarn@4.8.1"
+  "packageManager": "yarn@4.9.0"
 }
