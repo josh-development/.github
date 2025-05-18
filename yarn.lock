@@ -5,12 +5,12 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@joshdb/prettier-config@npm:2.0.0-next.f54db66.0":
-  version: 2.0.0-next.f54db66.0
-  resolution: "@joshdb/prettier-config@npm:2.0.0-next.f54db66.0"
+"@joshdb/prettier-config@npm:2.0.0-next.f678bb7.0":
+  version: 2.0.0-next.f678bb7.0
+  resolution: "@joshdb/prettier-config@npm:2.0.0-next.f678bb7.0"
   dependencies:
-    prettier: "npm:^3.3.3"
-  checksum: 10c0/71fbeaa5ca273678005f2e858ec70fd04bcd88eefcede4b0697610b78d6aecc889aefe2bf6ff2fbb4d56070511eafd7bf82551648bbb8abef6879de5bca3dae7
+    prettier: "npm:^3.5.3"
+  checksum: 10c0/99ae38c3665960b8e493a76e91d35dcf16134083202a8cc2a0967e4a162832679ac71c8a259c194ad3091b9e4f2dbd2ab6397886f2224647aa0e0ead919829f0
   languageName: node
   linkType: hard
 
@@ -18,19 +18,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "github@workspace:."
   dependencies:
-    "@joshdb/prettier-config": "npm:2.0.0-next.f54db66.0"
+    "@joshdb/prettier-config": "npm:2.0.0-next.f678bb7.0"
     prettier: "npm:^3.5.3"
   languageName: unknown
   linkType: soft
-
-"prettier@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "prettier@npm:3.3.3"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
-  languageName: node
-  linkType: hard
 
 "prettier@npm:^3.5.3":
   version: 3.5.3
