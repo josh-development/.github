@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@joshdb/prettier-config": "2.0.0-next.ff99524.0",
-    "prettier": "^3.9.1"
+    "prettier": "^3.9.4"
   },
   "prettier": "@joshdb/prettier-config",
   "packageManager": "yarn@4.17.0"
